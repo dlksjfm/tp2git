@@ -43,12 +43,23 @@ jobs:
 
   Deployment:
     runs-on: windows-latest
-
+    
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
 
-      - name: Deploy locally
+      # Autres étapes de construction de votre application
+
+      - name: Deploy locally and generate result file
         run: |
-          mkdir -p D:\master pro 1er\semster 2\devops\dep  
-          scp -r D:\master pro 1er\semster 2\devops\dep 
+          mkdir -p D:\master pro 1er\semster 2\devops\dep    # Créer le répertoire de destination
+          scp -r D:\master pro 1er\semster 2\devops\dep  > deployment_result.txt  # Copier les fichiers et enregistrer les résultats dans un fichier
+        continue-on-error: true  # Permet de continuer même si la commande de déploiement échoue
+
+      - name: Upload deployment result
+        uses: actions/upload-artifact@v2
+        with:
+          name: deployment-result
+          path: deployment_result.txt  # Télécharger le fichier résultat du déploiement
+
+

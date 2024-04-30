@@ -52,8 +52,8 @@ jobs:
 
       - name: Deploy locally and generate result file
         run: |
-          mkdir -p D:\master pro 1er\semster 2\devops\dep    # Créer le répertoire de destination
-          scp -r D:\master pro 1er\semster 2\devops\dep  > deployment_result.txt  # Copier les fichiers et enregistrer les résultats dans un fichier
+          mkdir -p D:\dep    # Créer le répertoire de destination
+          scp -r D:\dep  > deployment_result.txt  # Copier les fichiers et enregistrer les résultats dans un fichier
         continue-on-error: true  # Permet de continuer même si la commande de déploiement échoue
 
       - name: Upload deployment result

@@ -50,5 +50,5 @@ jobs:
 
       - name: Deploy locally
         run: |
-          mkdir -p D:\master pro 1er\semster 2\devops\dep  # Créer le répertoire de destination
-          scp -r D:\master pro 1er\semster 2\devops\dep  # Copier les fichiers vers le répertoire de destination
+          mkdir -p D:\master pro 1er\semster 2\devops\dep  
+          scp -r D:\master pro 1er\semster 2\devops\dep 

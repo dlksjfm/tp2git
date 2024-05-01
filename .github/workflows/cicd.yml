@@ -50,7 +50,7 @@ jobs:
       
       - name: Build Docker image
         run: |
-          echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+          echo "$DOCKER_PASSWORD" | docker login -u "$mohamedgmxde" --password-stdin
           docker build -t java .
       
       - name: Push Docker image to Docker Hub
